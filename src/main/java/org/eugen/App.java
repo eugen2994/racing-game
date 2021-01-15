@@ -1,27 +1,25 @@
 package org.eugen;
 
 
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
         System.out.println("Hello World!");
 
         Car carReference = new Car();
         carReference.name = "Ferrari";
-         carReference.maxSpeed = 300;
-         carReference.fuelLevel = 60;
-         carReference.mileage = 12.5;
-         carReference.totalTraveledDistance = 0;
-         carReference.damaged = true;
-         carReference.doorCount = 1;
-         carReference.color = "Red";
+        carReference.maxSpeed = 300;
+        carReference.fuelLevel = 60;
+        carReference.mileage = 12.5;
+        carReference.totalTraveledDistance = 0;
+        carReference.damaged = true;
+        carReference.doorCount = 1;
+        carReference.color = "Red";
 
-         Engine engine1 = new Engine();
-         engine1.manufacturer = "Ferrari";
-         engine1.capacity = 3000;
+        Engine engine1 = new Engine();
+        engine1.manufacturer = "Ferrari";
+        engine1.capacity = 3000;
 
-         carReference.engine = engine1;
+        carReference.engine = engine1;
 
         System.out.println("Engine1 capacity: " + engine1.capacity);
         System.out.println("Car engine capacity: " + carReference.engine.capacity);
@@ -40,7 +38,7 @@ public class App
         System.out.println("Damaged: " + carReference.damaged);
         System.out.println("Door Count: " + carReference.doorCount);
         System.out.println("Color: " + carReference.color);
-        
+
         Car car2 = new Car();
         car2.name = "Renault";
         car2.fuelLevel = 70;
@@ -62,6 +60,10 @@ public class App
 
         double distanceForCar2 = car2.accelerate(100, 1);
 
+        System.out.println("Engine name before repair: " + carReference.engine.manufacturer);
+        Mechanic mechanic = new Mechanic();
+        mechanic.repair(carReference);
+        System.out.println("Engine name after repair: " + carReference.engine.manufacturer);
 
 
 //        System.out.println("Initial name for car1: " + carReference.name);
